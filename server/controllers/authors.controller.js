@@ -7,7 +7,7 @@ module.exports.home = (req,res) => {
 }
 
 module.exports.edit = (req,res) => {
-    Author.findOneAndUpdate({_id:req.params.id}, req.body, {new:true})
+    Author.findOneAndUpdate({_id:req.params.id}, req.body, {new:true, runValidators:true})
     .then((req)=>res.json(req))
     .catch((err)=>res.status(400).json(err))
 }

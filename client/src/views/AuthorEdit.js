@@ -23,7 +23,7 @@ const AuthorEdit = (props) => {
             navigate('/');
         })
         .catch((err)=>{
-            console.log(err.response.data.errors);
+            console.log(err);
             setError(err.response.data.errors.name.message);
     })
 }
